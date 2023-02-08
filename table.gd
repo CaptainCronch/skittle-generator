@@ -145,10 +145,16 @@ func _on_reset_pressed():
 
 func _on_width_value_changed(value):
 	base_width = value
+	for child in circle_holder.get_children():
+		child.queue_free()
+	update()
 
 
 func _on_length_value_changed(value):
 	base_height = value
+	for child in circle_holder.get_children():
+		child.queue_free()
+	update()
 
 
 func _on_fullscreen_pressed():
